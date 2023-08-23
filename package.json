@@ -1,0 +1,28 @@
+{
+  "name": "mongo-network-api",
+  "version": "1.0.0",
+  "description": "A social network for friends to share their experiences",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node utils/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^7.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zbichsel/mongo-network-api.git"
+  },
+  "keywords": [
+    "social",
+    "network"
+  ],
+  "author": "Zack Bichsel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zbichsel/mongo-network-api/issues"
+  },
+  "homepage": "https://github.com/zbichsel/mongo-network-api#readme"
+}
