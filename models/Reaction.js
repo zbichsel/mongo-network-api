@@ -29,4 +29,9 @@ const reactionSchema = new Schema(
     }
 );
 
+//!-- getter method for timestamp format --!
+reactionSchema.virtual('formattedCreatedAt').get(function () {
+    return this.createdAt.toISOString();
+});
+
 module.exports = reactionSchema;
