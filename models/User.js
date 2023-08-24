@@ -13,12 +13,10 @@ const userSchema = new Schema(
             type: String,
             unique: true,
             required: true,
-            validate: {
-                validator: function(v) {
-                    return /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(v);
-                }
-            }
-        },
+            // !-- Decide which property to use below --!
+            validate: [validateEmail, 'Please enter a valid email address'],
+            match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'Please Enter a valid email address'],
+            },
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
