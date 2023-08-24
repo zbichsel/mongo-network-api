@@ -1,5 +1,7 @@
 const { connect, connection } = require('mongoose');
+require('dotenv').config();
 
-connect('mongodb+srv://root:root@cluster0.nien6ix.mongodb.net/socialMedia');
+
+connect(process.env.MONGO_URI);
 
 module.exports = connection;
