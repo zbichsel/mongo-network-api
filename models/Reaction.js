@@ -18,20 +18,16 @@ const reactionSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
+            get: createdAtDate => moment(createdAtDate).format('MMM DD YYYY [at] hh:mm a')
             //!-- use a getter method to format the timestamp on query--!
         },
     },
     {
         toJSON: {
-            getters: true,
+            virtuals: true,
         },
         id: false,
     }
 );
-
-//!-- getter method for timestamp format --!
-reactionSchema.virtual('formattedCreatedAt').get(function () {
-    return this.createdAt.toISOString();
-});
 
 module.exports = reactionSchema;

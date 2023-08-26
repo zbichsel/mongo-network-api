@@ -1,58 +1,59 @@
-const usernamesies = [
-    'zbichsel',
-    'totalmongoose',
-    'crazytrainzzz',
-    'testingtesttest',
-    'tigerisking',
+const userData = [
+    {
+        username: 'fireflies123',
+        email: 'lightinthenight@example.com',
+    },
+    {
+        username: 'zeiss20',
+        email: 'zeisslens2@example.com',
+    },
+    {
+        username: 'halloweenie',
+        email: 'goblins123@example.com',
+    },
+    {
+        username: 'leprechaun',
+        email: 'movies90@example.com',
+    },
+    {
+        username: 'codeblack12',
+        email: 'darkskies@example.com',
+    },
+    {
+        username: 'candlelight4',
+        email: 'pumpkinspicelatte@example.com',
+    },
 ];
 
-const thoughtsies = [
-    'I am outta my mind',
-    'If I had a nickel',
-    'I love Halloween',
-    'Cats are the best pets',
-    'I am going to eat spaghetti for dinner',
+const thoughtData = [
+    {
+        thoughtText: 'Lightning bugs are pretty cool',
+        username: 'fireflies123',
+        reactions: [
+            {
+                reactionBody: 'I agree',
+                username: 'leprechaun',
+            },
+            {
+                reactionBody: 'I remember catching them as a kid',
+                username: 'candlelight4',
+            },
+        ]
+    },
+    {
+        thoughtText: 'Samhain is irish culture',
+        username: 'halloweenie',
+        reactions: [
+            {
+                reactionBody: 'I did not know that',
+                username: 'zeiss20',
+            },
+            {
+                reactionBody: 'I want to visit ireland!',
+                username: 'codeblack12',
+            },
+        ]
+    },
 ];
 
-const reactionsies = [
-    'happy',
-    'sad',
-    'angry',
-    'exhausted',
-    'nervous',
-];
-
-const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
-
-const getRandomName = () => getRandomArrItem(usernamesies);
-
-const getRandomThoughts = (int) => {
-    let results = [];
-    for (let i = 0; i < int; i++) {
-        results.push({
-            thoughtText: getRandomArrItem(thoughtsies),
-            username: getRandomName(),
-            reactions: [...getThoughtReactions(3)], // Change the number of reactions as needed
-        });
-    }
-    return results;
-};
-
-const getThoughtReactions = (int) => {
-    if (int === 1) {
-        return [{
-            reactionBody: getRandomArrItem(reactionsies),
-            username: getRandomName(),
-        }];
-    }
-    const results = [];
-    for (let i = 0; i < int; i++) {
-        results.push({
-            reactionBody: getRandomArrItem(reactionsies),
-            username: getRandomName(),
-        });
-    }
-    return results;
-};
-
-module.exports = { getRandomName, getRandomThoughts };
+module.exports = { userData, thoughtData };
