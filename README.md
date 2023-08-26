@@ -14,6 +14,7 @@ In its current state, there is no frontend for the app, so the user would need t
 
 
   ## Table of Contents
+  - [Screen Recording](#screen-recording)
   - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
@@ -38,6 +39,14 @@ The user will need to create an account at [MongoDB](https://www.mongodb.com/) a
 To access this social media API application, please run the following command in your integrated terminal for this repository:
 
 `node index.js`
+
+  ## Screen Recording
+
+  
+
+https://github.com/zbichsel/mongo-network-api/assets/136612956/6d92d951-ceb1-4f0e-9abd-1092b30249dd
+
+
 
   ## Screenshot
 
