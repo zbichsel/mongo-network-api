@@ -11,7 +11,7 @@ module.exports = {
     },
     async getSingleThought(req, res) {
         try {
-            const thought = Thought.findOne({ _id: req.params.thoughtId })
+            const thought = await Thought.findOne({ _id: req.params.thoughtId })
             .select('-__v');
 
             if (!thought) {
@@ -19,6 +19,7 @@ module.exports = {
             }
             res.json(thought);
         } catch (err) {
+            console.log(err)
             res.status(500).json(err);
         }
     },
